@@ -5,10 +5,26 @@
 
 #보드 설정
 N = int(input())
-Board = [[0 for i in range(N)]for J in range(N)]
+Board = [[0 for i in range(N)]for j in range(N)]
 Num = []
+limit = 5
+ans = -1
 
 for i in range(N):
     Num.append(list(map(int, input().split())))
 
-#
+#보드 합쳐
+def move(next,Board):
+    #next = 1, 2, 3, 4 : 상, 하, 좌, 우
+    if next == 1:
+        for i in range(N):
+            for j in range(N):
+                #위 아래 비교후 합치기
+                if Board[i][j] == Board[i+1][j]:
+                    Board[i][j] = Board[i][j] * 2
+                    tmp1 = Board[:i][j]
+                    tmp2 = Board[i+1:][j] + [0]
+                    Board[i] = tmp1 + tmp2
+                else:
+                    Board
+                    
