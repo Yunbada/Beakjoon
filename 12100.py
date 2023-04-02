@@ -5,26 +5,39 @@
 
 #보드 설정
 N = int(input())
-Board = [[0 for i in range(N)]for j in range(N)]
-Num = []
-limit = 5
-ans = -1
+Board = []
+
 
 for i in range(N):
-    Num.append(list(map(int, input().split())))
+    Board.append(list(map(int, input().split())))
 
-#보드 합쳐
-def move(next,Board):
-    #next = 1, 2, 3, 4 : 상, 하, 좌, 우
-    if next == 1:
+#배열의 특징? 오른쪽으로 이동하려함 꺾어서 사용하자?
+def turn(move,Board):
+    new_Board = [[0 for i in range(N)]for j in range(N)]
+    #위로 Up 오른쪽 Right 아래 Down 왼쪽 Left
+    if move == "up":
+        #시계방향 회전
         for i in range(N):
             for j in range(N):
-                #위 아래 비교후 합치기
-                if Board[i][j] == Board[i+1][j]:
-                    Board[i][j] = Board[i][j] * 2
-                    tmp1 = Board[:i][j]
-                    tmp2 = Board[i+1:][j] + [0]
-                    Board[i] = tmp1 + tmp2
-                else:
-                    Board
-                    
+                new_Board[j][N-1-i] = Board[i][j]
+        print("newB up",new_Board)
+        return new_Board
+    
+    if move == "down":
+        for i in range(N):
+            for j in range(N):
+                new_Board[N-1-j][i] = Board[i][j]
+        print("newB down",new_Board)
+        return new_Board
+
+    if move == "left":
+        for i in range(N):
+            for j in range(N):
+                new_Board[i][N-1-j] = Board[i][j]
+                
+        print("newleft",new_Board)
+        return new_Board
+
+turn("left",Board)
+turn("up",Board)
+turn("down",Board)
