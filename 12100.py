@@ -22,14 +22,14 @@ def turn(move,Board):
                 new_Board[j][N-1-i] = Board[i][j]
         print("newB up",new_Board)
         return new_Board
-    
+    #반시계방향
     if move == "down":
         for i in range(N):
             for j in range(N):
                 new_Board[N-1-j][i] = Board[i][j]
         print("newB down",new_Board)
         return new_Board
-
+    #가운데를 기준으로 회전
     if move == "left":
         for i in range(N):
             for j in range(N):
@@ -38,6 +38,26 @@ def turn(move,Board):
         print("newleft",new_Board)
         return new_Board
 
+#보드전부 합치기
+def sum(Board):
+    for i in range(N):
+        for j in range(N):
+            #제일 오른쪽 수랑 왼쪽수 같으면 곱2
+            if Board[i][N-1-j] == Board[i][N-2-j]:
+                Board[i][N-1-j] = Board[i][N-1-j]*2
+                Board[i][N-2-j] = 0
+            #제일 오른쪽 수가 0일경우 왼쪽수를 오른쪽으로 이동
+            elif Board[i][N-1-j] == 0:
+                Board[i][N-1-j] = Board[i][N-2-j]
+                Board[i][N-2-j] = 0
+            else:
+                pass
+            
+    print("sun",Board)
+       
+print(Board)     
+sum(Board) #Error
 turn("left",Board)
-turn("up",Board)
-turn("down",Board)
+sum(Board)
+Board = turn("left",Board)
+sum(Board)
