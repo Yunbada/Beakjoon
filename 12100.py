@@ -12,6 +12,7 @@ for i in range(N):
     Board.append(list(map(int, input().split())))
 
 #배열의 특징? 오른쪽으로 이동하려함 꺾어서 사용하자?
+#오른쪽으로 합친다.
 def turn(move,Board):
     new_Board = [[0 for i in range(N)]for j in range(N)]
     #위로 Up 오른쪽 Right 아래 Down 왼쪽 Left
@@ -20,44 +21,61 @@ def turn(move,Board):
         for i in range(N):
             for j in range(N):
                 new_Board[j][N-1-i] = Board[i][j]
-        print("newB up",new_Board)
+        print("newup",new_Board)
         return new_Board
     #반시계방향
     if move == "down":
         for i in range(N):
             for j in range(N):
                 new_Board[N-1-j][i] = Board[i][j]
-        print("newB down",new_Board)
+        print("newdown",new_Board)
         return new_Board
     #가운데를 기준으로 회전
     if move == "left":
         for i in range(N):
             for j in range(N):
-                new_Board[i][N-1-j] = Board[i][j]
-                
+                new_Board[i][N-1-j] = Board[i][j]     
         print("newleft",new_Board)
         return new_Board
 
 #보드전부 합치기
 def sum(Board):
+    Board2 = [[0 for i in range(N)]for j in range(N)]
     for i in range(N):
         for j in range(N):
-            #제일 오른쪽 수랑 왼쪽수 같으면 곱2
-            if Board[i][N-1-j] == Board[i][N-2-j]:
-                Board[i][N-1-j] = Board[i][N-1-j]*2
-                Board[i][N-2-j] = 0
-            #제일 오른쪽 수가 0일경우 왼쪽수를 오른쪽으로 이동
-            elif Board[i][N-1-j] == 0:
-                Board[i][N-1-j] = Board[i][N-2-j]
-                Board[i][N-2-j] = 0
+            #배열에서 같은 같은 행에서 숫자 찾기
+            #먼저 숫자를 오른쪽으로 이동
+            if Board[i][N-1-j] == 0:
+                    if Board[i][N-2-j] == 0:
+                        j= j+1
+                        return Board2
+                    else:
+                        Board2[i][N-1-j] = Board[i][N-2-j]
+                        j = 0
+                        return Board2
             else:
-                pass
+                Board2 = Board[i][N-1-j]
+                return Board2
+        #숫자 비교후 합치기
+    for k in range(N):
+            if Board2[i][N-1-k] == Board2[i][N-2-k]:
+                Board[i][N-1-k] = Board2[i][N-1-k]*2
+                Board2[i][N-1-k] =Board2[i][N-1-k]*2
+                Board2[i][N-2-k] = 0
+                return Board
+            else:
+                Board2[i][N-1-k] = Board2[i][N-2-k]
+                Board[i][N-1-k] = Board2[i][N-2-k]
+                Board2[i][N-2-k] = 0
+                return Board
+                
             
-    print("sun",Board)
-       
-print(Board)     
-sum(Board) #Error
-turn("left",Board)
-sum(Board)
-Board = turn("left",Board)
-sum(Board)
+            
+                
+                
+                
+                
+                    
+Board = sum(Board)
+print(Board)
+
