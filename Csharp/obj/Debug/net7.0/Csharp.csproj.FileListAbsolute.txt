@@ -1,0 +1,5 @@
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.csproj.AssemblyReference.cache
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.AssemblyInfoInputs.cache
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.AssemblyInfo.cs
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.csproj.CoreCompileInputs.cache
