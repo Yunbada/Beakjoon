@@ -3,3 +3,13 @@
 /Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.AssemblyInfoInputs.cache
 /Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.AssemblyInfo.cs
 /Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.csproj.CoreCompileInputs.cache
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/bin/Debug/net7.0/Csharp
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/bin/Debug/net7.0/Csharp.deps.json
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/bin/Debug/net7.0/Csharp.runtimeconfig.json
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/bin/Debug/net7.0/Csharp.dll
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/bin/Debug/net7.0/Csharp.pdb
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.dll
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/refint/Csharp.dll
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.pdb
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/Csharp.genruntimeconfig.cache
+/Users/yun/Documents/GitHub/Beakjoon/Csharp/obj/Debug/net7.0/ref/Csharp.dll
