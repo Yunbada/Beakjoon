@@ -14,8 +14,25 @@
 #4
 from collections import deque
 
+#bfs 너비우선탐색 사용
+def bfs(graph, start, visited):
+    global cnt
+    queue = deque([start])
+    visited[start] = True
+    
+    while queue:
+        v = queue.popleft()
+        
+        for i in graph[v]:
+            if not (visited[i]):
+                queue.append(i)
+                visited[i] = True
+                cnt += 1
+        
+        
 n = int(input())
 m = int(input())
+cnt = 0
 
 #양방향 간선만들기
 graph = [[] for _ in range(n+1)]
@@ -23,27 +40,11 @@ for i in range(m):
     u,v = map(int,input().split())
     graph[u].append(v)
     graph[v].append(u)
-    
-#bfs 너비우선탐색 사용
-def bfs(graph, start, visited):
-    queue = deque([start])
-    visited[start] = True
-    
-    while queue:
-        v = queue.popleft()
-        for i in graph[v]:
-            if not (visited[i]):
-                queue.append(i)
-                visited[i] = True
+              
                 
-                
-                
-cnt = 0
 visited = [False] * (n+1)
 
-for i in range(1,n+1):
-    if not visited[i]:
-        bfs(graph, i, visited)
+bfs(graph, 1, visited)
         
         
 print(cnt)
